@@ -1,0 +1,21 @@
+{
+  "name": "Natelier",
+  "short_name": "Natelier",
+  "description": "Handcrafted jewelry for those who appreciate quality and restraint.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F3EEE7",
+  "theme_color": "#F3EEE7",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

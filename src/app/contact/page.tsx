@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with Natelier. We're here to help.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

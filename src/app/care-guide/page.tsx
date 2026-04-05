@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Care Guide",
   description: "How to care for your Natelier jewelry so it lasts a lifetime.",
+  alternates: { canonical: "/care-guide" },
 };
 
 export default function CareGuidePage() {

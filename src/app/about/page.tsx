@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "The story behind Natelier. Handcrafted jewelry for people who think before they buy.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

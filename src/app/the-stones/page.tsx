@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "The Stones",
   description:
     "We choose stones for their character, not just their grade. Learn about our sourcing, treatment transparency, and stone philosophy.",
+  alternates: { canonical: "/the-stones" },
 };
 
 const stones = [

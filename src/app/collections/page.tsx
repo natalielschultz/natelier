@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Collections",
   description:
     "Explore our collections of handcrafted jewelry. Sapphires, rubies, emeralds, diamonds, and the Chakra Collection.",
+  alternates: { canonical: "/collections" },
 };
 
 export default function CollectionsPage() {

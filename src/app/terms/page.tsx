@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Natelier terms of service.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Custom",
   description:
     "Bespoke jewelry designed around your vision. Tell us what you're looking for and we'll bring it to life.",
+  alternates: { canonical: "/custom" },
 };
 
 export default function CustomPage() {

@@ -10,6 +10,7 @@ import {
   getProductByHandle,
   formatPrice,
 } from "@/lib/mock-data";
+import { getProductSchema, getBreadcrumbSchema } from "@/lib/structured-data";
 
 interface PageProps {
   params: Promise<{ handle: string }>;
@@ -26,6 +27,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: product.name,
     description: product.shortDescription,
+    alternates: {
+      canonical: `/products/${handle}`,
+    },
+    openGraph: {
+      title: `${product.name} | Natelier`,
+      description: product.shortDescription,
+      type: "website",
+      url: `/products/${handle}`,
+      images: [
+        {
+          url: "/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: product.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} | Natelier`,
+      description: product.shortDescription,
+      images: ["/og-image.jpg"],
+    },
   };
 }
 
@@ -34,9 +58,46 @@ export default async function ProductPage({ params }: PageProps) {
   const product = getProductByHandle(handle);
   if (!product) notFound();
 
+  const breadcrumbs = [
+    { name: "Home", url: "/" },
+    { name: "Collections", url: "/collections" },
+    { name: product.collection, url: `/collections/${product.collectionHandle}` },
+    { name: product.name, url: `/products/${product.handle}` },
+  ];
+
   return (
     <section className="py-4xl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            getProductSchema(product),
+            getBreadcrumbSchema(breadcrumbs),
+          ]),
+        }}
+      />
       <Container>
+        {/* Breadcrumb nav */}
+        <nav aria-label="Breadcrumb" className="mb-2xl">
+          <ol className="flex items-center gap-sm text-xs text-text-tertiary">
+            {breadcrumbs.map((crumb, i) => (
+              <li key={crumb.url} className="flex items-center gap-sm">
+                {i > 0 && <span>/</span>}
+                {i < breadcrumbs.length - 1 ? (
+                  <Link
+                    href={crumb.url}
+                    className="hover:text-text-primary transition-colors duration-300"
+                  >
+                    {crumb.name}
+                  </Link>
+                ) : (
+                  <span className="text-text-secondary">{crumb.name}</span>
+                )}
+              </li>
+            ))}
+          </ol>
+        </nav>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3xl">
           {/* Gallery */}
           <ProductGallery

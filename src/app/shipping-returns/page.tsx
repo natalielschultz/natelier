@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Shipping & Returns",
   description: "Natelier shipping information and return policy.",
+  alternates: { canonical: "/shipping-returns" },
 };
 
 export default function ShippingReturnsPage() {

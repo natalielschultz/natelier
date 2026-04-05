@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
+import { getFAQSchema, getBreadcrumbSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "FAQ",
   description:
     "Frequently asked questions about Natelier jewelry, shipping, returns, and care.",
+  alternates: {
+    canonical: "/faq",
+  },
 };
 
 const faqs = [
@@ -53,6 +57,18 @@ const faqs = [
 export default function FAQPage() {
   return (
     <section className="py-4xl">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            getFAQSchema(faqs),
+            getBreadcrumbSchema([
+              { name: "Home", url: "/" },
+              { name: "FAQ", url: "/faq" },
+            ]),
+          ]),
+        }}
+      />
       <Container>
         <div className="max-w-[680px] mx-auto">
           <div className="text-center mb-3xl">

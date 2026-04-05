@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "The System",
   description:
     "Pieces that connect, transform, and grow with you. Natelier jewelry is designed as a modular system.",
+  alternates: { canonical: "/the-system" },
 };
 
 export default function TheSystemPage() {
