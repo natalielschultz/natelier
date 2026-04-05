@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors - Backgrounds */
+  --color-bg-primary: #F3EEE7;
+  --color-bg-secondary: #FFFDF8;
+  --color-bg-tertiary: #EBE6DF;
+  --color-bg-white: #FFFFFF;
+
+  /* Colors - Text */
+  --color-text-primary: #313131;
+  --color-text-secondary: #5A5A5A;
+  --color-text-tertiary: #8A8A8A;
+
+  /* Colors - Button */
+  --color-button-primary-bg: #313131;
+  --color-button-primary-text: #F3EEE7;
+  --color-button-primary-hover: #1A1A1A;
+  --color-button-secondary-border: #313131;
+  --color-button-secondary-hover-bg: #313131;
+  --color-button-secondary-hover-text: #F3EEE7;
+
+  /* Colors - Border */
+  --color-border-primary: #D4CFC8;
+  --color-border-secondary: #E2DDD6;
+
+  /* Colors - Interactive */
+  --color-interactive-hover: #EBE6DF;
+  --color-interactive-active: #E2DDD6;
+
+  /* Shadows */
+  --shadow-card: 0 2px 8px rgba(49, 49, 49, 0.06);
+  --shadow-elevated: 0 4px 16px rgba(49, 49, 49, 0.08);
+
+  /* Fonts */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-base: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 96px;
+  --spacing-5xl: 128px;
+
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Animation */
+  --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --transition-default: cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.625;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.167;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 1.222;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 1.286;
+}
+
+h4 {
+  font-size: 22px;
+  line-height: 1.364;
+}
+
+::selection {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg-primary);
+}
+
+input, textarea, select, button {
+  font-family: var(--font-body);
+}
